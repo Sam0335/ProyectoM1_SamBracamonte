@@ -1,0 +1,30 @@
+#container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 30px;
+    border: 1pc solid #D9DCD6;
+    background-color: #D9DCD6;
+}
+.color-box {
+    width: 100px;
+    height: 100px;
+    background-color: #D9DCD6;
+}
+#NavBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        gap: 0px;
+}
+.header{
+    justify-content: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #16425B;
+    padding: 20%;
+    height: 100%;
+}
