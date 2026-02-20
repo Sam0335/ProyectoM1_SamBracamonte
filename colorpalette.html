@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,16 @@
 <body>
     <header>
         <nav>
-            <button id="generateColors" onclick="generateColors()">Generar Colores</button>
-            <a href="landingpage.html"><button id="GotoLanding" >Fuck, go back!</button></a>
+            <button id="generateColors" onclick="generateColors()">Generar Paleta</button>
         </nav>
     </header>
 
     <main>
-        <select>
-            <option value class=""> Seleccione un valor </option>
-            <option value class="6-colors"> 6 </option>
-            <option value class="8-colors"> 8 </option>
-            <option value class="9-colors"> 9 </option>
+        <select id="BoxQuantity">
+            <option value="-1"> Seleccione un valor </option>
+            <option value="6"> 6 </option>
+            <option value="8"> 8 </option>
+            <option value="9"> 9 </option>
         </select>
 
         <div id="container">
