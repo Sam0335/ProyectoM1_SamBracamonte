@@ -1,4 +1,4 @@
-#container {
+#colors {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
@@ -6,7 +6,7 @@
     border: 1pc solid #D9DCD6;
     background-color: #D9DCD6;
 }
-.color-box {
+.colorBox {
     width: 100px;
     height: 100px;
     background-color: #D9DCD6;
@@ -27,4 +27,7 @@ body {
     background-color: #16425B;
     padding: 20%;
     height: 100%;
+}
+h1 {
+    color: #D9DCD6;
 }

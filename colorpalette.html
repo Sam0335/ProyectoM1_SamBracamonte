@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Color Generator</title>
+    <title>Generador de paleta</title>
     <script src="colorcounter.js"></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <button id="generateColors" onclick="generateColors()">Generar Paleta</button>
-        </nav>
-    </header>
+    <h1> Generador de paleta </h1>
 
     <main>
         <select id="BoxQuantity">
@@ -23,16 +19,20 @@
             <option value="9"> 9 </option>
         </select>
 
-        <div id="container">
-            <div class="color-box" id="colorBox1"></div>
-            <div class="color-box" id="colorBox2"></div>
-            <div class="color-box" id="colorBox3"></div>
-            <div class="color-box" id="colorBox4"></div>
-            <div class="color-box" id="colorBox5"></div>
-            <div class="color-box" id="colorBox6"></div>
-            <div class="color-box" id="colorBox7"></div>
-            <div class="color-box" id="colorBox8"></div>
-            <div class="color-box" id="colorBox9"></div>
+        <button id="generateColors" onclick="generateColors()"> Generar Paleta </button>
+
+        <button id="colorType" onclick="toggleColorType()" style="display:none"> Cambiar a HSL </button>
+
+        <div id="colors">
+            <div class="colorBox" id="colorBox1"></div>
+            <div class="colorBox" id="colorBox2"></div>
+            <div class="colorBox" id="colorBox3"></div>
+            <div class="colorBox" id="colorBox4"></div>
+            <div class="colorBox" id="colorBox5"></div>
+            <div class="colorBox" id="colorBox6"></div>
+            <div class="colorBox" id="colorBox7"></div>
+            <div class="colorBox" id="colorBox8"></div>
+            <div class="colorBox" id="colorBox9"></div>
         </div>
     </main>
 
