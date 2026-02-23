@@ -7,12 +7,16 @@ function generateColors() {
     const n = document.getElementById("BoxQuantity").value;
 
     colorsArray = [];
-    for (i = 0; i < 9; i++){
+    for (let i = 0; i < 9; i++){
         colorsArray[i] = generateRandomColor();
     }
     isShowingHSL = false;
+
+    // Ocultar texto y botón de "Cambiar entre HEX y HSL"
     const ocultarColorType = document.getElementById("colorType");
+    const ocultarTexto = document.getElementById("colorTypeText")
     ocultarColorType.style.display = n > 0 ? "inline-block" : "none";
+    ocultarTexto.style.display = n > 0 ? "block" : "none";
     displayColors(n);
 }
 
@@ -52,23 +56,26 @@ function hexToHSL(hex) {
 }
 
 // Cambiar entre HEX y HSL
-function toggleColorType() {
-    isShowingHSL = !isShowingHSL;
+function toggleColorType(t = 0) {
     const button = document.getElementById("colorType")
     const n = document.getElementById("BoxQuantity").value;
-
-    button.textContent = isShowingHSL ? "Cambiar a HEX" : "Cambiar a HSL"
+    if (t === 1) {
+        isShowingHSL = false;
+    } else {
+        isShowingHSL = !isShowingHSL;
+    }
+    button.textContent = isShowingHSL ? "Cambiar a HEX" : "Cambiar a HSL";
     displayColors(n);
 }
 
-// Colores dependiendo la cantidad seleccionada
+// Mostrar colores dependiendo la cantidad seleccionada
 function displayColors(n) {
-    for (i = 0; i < 9; i++){
+    for (let i = 0; i < 9; i++){
         const box = document.getElementById("colorBox" + (i+1));
         if (i < n) {
             box.style.backgroundColor = colorsArray[i];
             box.textContent = isShowingHSL ? hexToHSL(colorsArray[i]) : colorsArray[i];
-            box.style.display = "block";
+            box.style.display = "flex";
         } else {
             box.style.display = "none";
         }

@@ -1,33 +1,121 @@
-#colors {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    gap: 30px;
-    border: 1pc solid #D9DCD6;
-    background-color: #D9DCD6;
+* {
+    margin: 0;
 }
-.colorBox {
-    width: 100px;
-    height: 100px;
-    background-color: #D9DCD6;
-}
-#NavBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-        gap: 0px;
-}
-.header{
-    justify-content: center;
-}
+
 body {
+    height: 100vh;
+    background: #5C5FD7;
+    font-family: 'DIN Alternate', 'DIN', Arial, Helvetica, sans-serif;
+    display: flex;
+    overflow: hidden;
+}
+
+main h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    display: block;
+    justify-content: center;
+}
+
+main p {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    background-color: #8B9FD9;
+    font-size: 20px;
+    font-weight: bold;
+    border: 10px solid #8B9FD9;
+    border-radius: 20px;
+    padding: 20px 20px;
+    }
+
+main {
+    flex: 0 0 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #16425B;
-    padding: 20%;
+    justify-content: space-between;
+    padding: 100px 50px 0;
+    background: #A8B8E1;
+}
+
+main footer {
+    color: rgb(99, 99, 99);
+    display: block;
+}
+
+select, button {
+    padding: 30px 100px;
+    background-color: #7B8DD9;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#BoxQuantity {
+    width: 250px;
+    padding: 12px 20px;
+    background-color: #7B8DD9;
+}
+
+#BoxQuantity option {
+    background-color: #8B9FD9;
+    color: white;
+    font-size: 15px;
+    font-weight: 550;
+    text-align: center;
+}
+
+select:hover,
+button:hover {
+    background-color: #6B7DC9;
+    transform: scale(1.05);
+}
+
+aside {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+#colors {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
     height: 100%;
+    justify-content: space-evenly;
 }
-h1 {
-    color: #D9DCD6;
+
+.colorBox {
+    width: 85%;
+    flex: 1;
+    background-color: #D9DCD6;
+    border-radius: 15px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.685);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
+
+.colorBox:hover {
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.28);
+    transform: translateY(-2px);
+}
+
+

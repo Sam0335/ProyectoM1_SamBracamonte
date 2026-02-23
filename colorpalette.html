@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Generador de paleta</title>
+    <title> Generador de paleta </title>
     <script src="colorcounter.js"></script>
 </head>
 
 <body>
-    <h1> Generador de paleta </h1>
-
     <main>
+        <h1> Generador de paleta </h1>
+
+        <p> Cantidad de colores </p>
         <select id="BoxQuantity">
             <option value="-1"> Seleccione un valor </option>
             <option value="6"> 6 </option>
@@ -19,10 +20,18 @@
             <option value="9"> 9 </option>
         </select>
 
-        <button id="generateColors" onclick="generateColors()"> Generar Paleta </button>
+        <p> Hacer click para generar colores aleatorios </p>
+        <button id="generateColors" onclick="generateColors(); toggleColorType(1)"> Generar Paleta </button>
 
-        <button id="colorType" onclick="toggleColorType()" style="display:none"> Cambiar a HSL </button>
+        <p id="colorTypeText" style="display: none"> Hacer click para cambiar el formato entre HEX/HSL </p>
+        <button id="colorType" onclick="toggleColorType()" style="display: none"> Cambiar a HSL </button>
 
+        <footer>
+            <small> &copy;Todos los derechos reservados a Colorfly Studio. </small>
+        </footer>
+    </main>
+
+    <aside id="colorsShown">
         <div id="colors">
             <div class="colorBox" id="colorBox1"></div>
             <div class="colorBox" id="colorBox2"></div>
@@ -34,7 +43,6 @@
             <div class="colorBox" id="colorBox8"></div>
             <div class="colorBox" id="colorBox9"></div>
         </div>
-    </main>
-
+    </aside>
 </body>
 </html>
