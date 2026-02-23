@@ -6,6 +6,12 @@ let isShowingHSL = false;
 function generateColors() {
     const n = document.getElementById("BoxQuantity").value;
 
+// Alerta de seleccionar valor
+if (n == -1) {
+    alert("Por favor seleccionar una cantidad de color válida");
+    return;
+}
+
     colorsArray = [];
     for (let i = 0; i < 9; i++){
         colorsArray[i] = generateRandomColor();
@@ -17,7 +23,16 @@ function generateColors() {
     const ocultarTexto = document.getElementById("colorTypeText")
     ocultarColorType.style.display = n > 0 ? "inline-block" : "none";
     ocultarTexto.style.display = n > 0 ? "block" : "none";
+
     displayColors(n);
+    mostrarToast();
+}
+
+// Toast al generar paleta
+function mostrarToast() {
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2000);
 }
 
 // Generador de colores aleatorios HEX

@@ -58,6 +58,25 @@ select, button {
     transition: all 0.3s ease;
 }
 
+#toast {
+    position: fixed;
+    bottom: 30px;
+    background-color: #7B8DD9;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 25px 25px;
+    border-radius: 20px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
 #BoxQuantity {
     width: 250px;
     padding: 12px 20px;
