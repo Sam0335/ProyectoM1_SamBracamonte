@@ -1,6 +1,6 @@
 
 let colorsArray = [];
-let isShowingHSL = false;
+let isHSLMode = false;
 
 // Estructura base
 function generateColors() {
@@ -13,10 +13,9 @@ if (n == -1) {
 }
 
     colorsArray = [];
-    for (let i = 0; i < 9; i++){
-        colorsArray[i] = generateRandomColor();
+    for (let i = 0; i < 9; i++) {
+        colorsArray[i] = isHSLMode ? generateRandomHSL() : generateRandomHEX();
     }
-    isShowingHSL = false;
 
     // Ocultar texto y botón de "Cambiar entre HEX y HSL"
     const ocultarColorType = document.getElementById("colorType");
@@ -36,50 +35,32 @@ function mostrarToast() {
 }
 
 // Generador de colores aleatorios HEX
-function generateRandomColor() {
+function generateRandomHEX() {
     const letters = '0123456789ABCDEF';
-    let color = '#';
+    let HEX = '#';
     for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+        HEX += letters[Math.floor(Math.random() * 16)];
     }
-    return color;
+    return HEX;
 }
 
-// Convertir HEX a HSL
-function hexToHSL(hex) {
-    const r = parseInt(hex.slice(1, 3), 16) / 255;
-    const g = parseInt(hex.slice(3, 5), 16) / 255;
-    const b = parseInt(hex.slice(5, 7), 16) / 255;
-
-    const max = Math.max(r, g, b);
-    const min = Math.min(r, g, b);
-    let h, s, l = (max + min) / 2;
-
-    if (max === min) {
-        h = s = 0;
-    } else {
-        const d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-        switch (max) {
-            case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
-            case g: h = ((b - r) / d + 2) / 6; break;
-            case b: h = ((r - g) / d + 4) / 6; break;
-        }
-    }
-    return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+// Generador de colores aleatorios HSL
+function generateRandomHSL() {
+    const h = Math.floor(Math.random() * 360);
+    const s = Math.floor(Math.random() * 101);
+    const l = Math.floor(Math.random() * 101);
+    return `hsl(${h}, ${s}%, ${l}%)`;
 }
 
 // Cambiar entre HEX y HSL
-function toggleColorType(t = 0) {
-    const button = document.getElementById("colorType")
+function toggleColorType() {
     const n = document.getElementById("BoxQuantity").value;
-    if (t === 1) {
-        isShowingHSL = false;
-    } else {
-        isShowingHSL = !isShowingHSL;
+    isHSLMode = !isHSLMode;
+
+    for (let i = 0; i < 9; i++) {
+        colorsArray[i] = isHSLMode ? generateRandomHSL() : generateRandomHEX();
     }
-    button.textContent = isShowingHSL ? "Cambiar a HEX" : "Cambiar a HSL";
+    document.getElementById("colorType").textContent = isHSLMode ? "Cambiar a HEX" : "Cambiar a HSL";
     displayColors(n);
 }
 
@@ -89,7 +70,7 @@ function displayColors(n) {
         const box = document.getElementById("colorBox" + (i+1));
         if (i < n) {
             box.style.backgroundColor = colorsArray[i];
-            box.textContent = isShowingHSL ? hexToHSL(colorsArray[i]) : colorsArray[i];
+            box.textContent = colorsArray[i];
             box.style.display = "flex";
         } else {
             box.style.display = "none";
