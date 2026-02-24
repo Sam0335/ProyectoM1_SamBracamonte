@@ -121,7 +121,7 @@ aside {
     border-radius: 15px;
     display: none;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 25px;
     font-weight: bold;
     font-size: 25px;

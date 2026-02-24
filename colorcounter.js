@@ -27,9 +27,10 @@ if (n == -1) {
     mostrarToast();
 }
 
-// Toast al generar paleta
-function mostrarToast() {
+// Toast al generar paleta / Copiar al portapapeles
+function mostrarToast(mensaje = "¡Paleta generada exitosamente!") {
     const toast = document.getElementById("toast");
+    toast.textContent = mensaje
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 2000);
 }
@@ -72,6 +73,10 @@ function displayColors(n) {
             box.style.backgroundColor = colorsArray[i];
             box.textContent = colorsArray[i];
             box.style.display = "flex";
+            box.onclick = () => {
+                navigator.clipboard.writeText(colorsArray[i]);
+                mostrarToast("Copiado al portapapeles");
+            }
         } else {
             box.style.display = "none";
         }
