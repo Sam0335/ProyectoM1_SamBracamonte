@@ -77,13 +77,13 @@ select, button {
     opacity: 1;
 }
 
-#BoxQuantity {
+#boxQuantity {
     width: 250px;
     padding: 12px 20px;
     background-color: #7B8DD9;
 }
 
-#BoxQuantity option {
+#boxQuantity option {
     background-color: #8B9FD9;
     color: white;
     font-size: 15px;
