@@ -4,7 +4,7 @@ let isHSLMode = false;
 
 // Estructura base
 function generateColors() {
-    const n = document.getElementById("BoxQuantity").value;
+    const n = document.getElementById("boxQuantity").value;
 
 // Alerta de seleccionar valor
 if (n == -1) {
@@ -55,7 +55,7 @@ function generateRandomHSL() {
 
 // Cambiar entre HEX y HSL
 function toggleColorType() {
-    const n = document.getElementById("BoxQuantity").value;
+    const n = document.getElementById("boxQuantity").value;
     isHSLMode = !isHSLMode;
 
     for (let i = 0; i < 9; i++) {
